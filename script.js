@@ -3,7 +3,7 @@
 // ============================================
 
 // TODO: replace with your deployed Apps Script Web App URL
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwYS3njhP-r19UIVAFtO5iu0klcBQO0KC72JnpxE0K1SKHPoM51XnyKAbnz1Z489Jc/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwU79CyZPeAHR_d99fuop0cmPfC4tMFaAA75N_FZXZQSX73oQMVDdxKrO7QlVAK1pNt/exec";
 
 let selectedCategory = null;
 let selectedIntensity = null;
