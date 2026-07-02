@@ -8,6 +8,17 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwU79CyZPeAHR_d99fuo
 let selectedCategory = null;
 let selectedIntensity = null;
 
+// ---------- Greeting ----------
+(function setGreeting(){
+  const now = new Date();
+  const hour = now.getHours();
+  let greet = "Evening check-in";
+  if (hour < 12) greet = "Morning check-in";
+  else if (hour < 17) greet = "Afternoon check-in";
+  const dateStr = now.toLocaleDateString("en-IN", { weekday: "long", month: "long", day: "numeric" });
+  document.getElementById("greetingLine").textContent = `${greet} · ${dateStr}`;
+})();
+
 // ---------- Tabs ----------
 document.querySelectorAll(".tab-btn").forEach(btn => {
   btn.addEventListener("click", () => {
