@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grounding Check-In</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="tabs">
+    <button class="tab-btn active" data-tab="log">Log</button>
+    <button class="tab-btn" data-tab="analytics">Patterns</button>
+  </header>
+
+  <!-- LOG TAB -->
+  <section id="tab-log" class="tab-panel active">
+
+    <div id="step-form">
+      <h1>Check In</h1>
+      <p class="subtitle">What disrupted you?</p>
+
+      <div class="category-grid" id="categoryGrid"></div>
+
+      <div class="intensity-block">
+        <p class="label">Intensity</p>
+        <div class="intensity-options" id="intensityOptions">
+          <button class="intensity-btn low" data-intensity="Low">Low</button>
+          <button class="intensity-btn medium" data-intensity="Medium">Medium</button>
+          <button class="intensity-btn high" data-intensity="High">High</button>
+        </div>
+      </div>
+
+      <button id="submitBtn" class="submit-btn" disabled>Log this</button>
+      <p id="statusMsg" class="status-msg"></p>
+    </div>
+
+    <!-- GROUNDING FIRST (High intensity only) -->
+    <div id="step-grounding-first" class="result-card hidden">
+      <p class="card-kicker">Before anything else</p>
+      <p id="groundingFirstText" class="grounding-text"></p>
+      <div class="card-actions">
+        <button id="groundingFirstContinue" class="link-btn">Continue →</button>
+        <button id="groundingFirstSkip" class="link-btn skip">Skip</button>
+      </div>
+    </div>
+
+    <!-- QUOTE CARD -->
+    <div id="step-quote" class="result-card hidden">
+      <div class="card-header">
+        <span id="quoteIcon" class="card-icon"></span>
+        <span id="quoteCategoryLabel" class="card-category"></span>
+        <span id="intensityDot" class="intensity-dot"></span>
+      </div>
+      <p id="quoteText" class="quote-text"></p>
+
+      <div id="groundingSecondary" class="grounding-secondary hidden">
+        <p class="card-kicker">Optional — grounding</p>
+        <p id="groundingSecondaryText" class="grounding-text small"></p>
+      </div>
+
+      <button id="newEntryBtn" class="submit-btn secondary">Log another</button>
+    </div>
+
+  </section>
+
+  <!-- ANALYTICS TAB -->
+  <section id="tab-analytics" class="tab-panel">
+    <h1>Patterns</h1>
+    <div id="analyticsEmpty" class="empty-state">
+      <p>Not enough entries yet.</p>
+      <p class="empty-sub">Keep logging — patterns will show here once there's more data.</p>
+    </div>
+    <div id="analyticsContent" class="hidden">
+      <div class="donut-wrap">
+        <svg id="donutChart" viewBox="0 0 200 200"></svg>
+        <div id="donutLegend" class="donut-legend"></div>
+      </div>
+      <div class="intensity-summary" id="intensitySummary"></div>
+    </div>
+  </section>
+
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
